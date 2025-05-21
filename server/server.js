@@ -12,6 +12,10 @@ import courseRouter from './routes/courseRoute.js'
 // Initialize Express
 const app = express()
 
+app.use(cors({
+  origin: "http://localhost:5173", // during development
+  credentials: true               // if using cookies or auth headers
+}));
 // Connect to database
 await connectDB()
 await connectCloudinary()
